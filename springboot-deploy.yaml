@@ -1,0 +1,12 @@
+- hosts: all
+  become: yes
+  vars:
+    springboot_application_name: ansible-jenkins-cicd
+      #springboot_src: tests/spring-boot-sample.jar
+    springboot_src: /home/springuser/ansible-jenkins-cicd/target/cicd-0.0.1-SNAPSHOT.jar 
+    springboot_java_install: false
+    springboot_user: springuser
+    springboot_group: springuser
+
+  roles:
+    - role: ansible-springboot
